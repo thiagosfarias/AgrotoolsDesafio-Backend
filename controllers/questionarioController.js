@@ -12,6 +12,7 @@ module.exports = app => {
     app.post('/questionario', (req, res) => {
             questionarios.questionarios.push(req.body)
             questionarios.questionarios.map(quest => console.log(quest.respostas))
+
         }
     )
 
