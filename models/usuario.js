@@ -1,15 +1,13 @@
 class Usuario {
-    criaQuestionario(){
-
+    constructor(user, data, latitude, longitude){
+        this.user = user
+        this.data = data
+        this.latitude = latitude
+        this.longitude = longitude
     }
 
-    respondeQuestionario(){
 
-    }
-
-    logar(){
-        
-    }
 }
+
 
 module.exports = Usuario

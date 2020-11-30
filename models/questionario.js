@@ -1,15 +1,20 @@
-const questionarioController =  require('../controllers/questionarioController')
+
+
 
 class Questionario {
+        constructor(user, titulo, perguntas){
+                this.user = user
+                this.titulo = titulo
+                this.perguntas = perguntas
+                this.respostas = []
+                this.respondido = false
+                this.id = 0
+        }
+
+
         
 
-        novo(){
 
-        }
-
-        lista(){
-
-        }
 
 
 }

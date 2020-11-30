@@ -1,22 +1,36 @@
-let questionario = {
-        "titulo":"terrenos",
-        "pergunta1":"qual a condição do terreno?",
-        "pergunta2":"quantos hectares?"        
-}
-        
+const Questionarios = require('../models/questionarios')
+
+
+
+const questionarios = new Questionarios()
+
+
 
 module.exports = app => {
-    app.get('/questionarios-pendentes', (req, res) => res.send(questionario))
+    app.get('/questionarios', (req, res) => res.send(questionarios))
 
-    app.get('/questionarios-respondidos', (req, res) => res.send(teste))
-
-    app.post('/criar-questionario', (req, res) => {
-            
-            questionario.push(req.body)
-            res.send(questionario)
+    app.post('/questionario', (req, res) => {
+            questionarios.questionarios.push(req.body)
+            questionarios.questionarios.map(quest => console.log(quest.respostas))
         }
     )
 
-    app.patch('/atualiza-status-questionario', (req, res) => res.send('ATUALIZADO'))
+    
+    
+    app.patch('/questionario/:id', (req, res) =>{
+        if(questionarios.questionarios[req.params.id]) {
+            res.status(404).send()
+        }
+        questionarios.questionarios[req.params.id].respostas.push(req.body)
+        res.status(204).send()
+    })
+
+
+   
 
 }
+
+/*1. tratamento de erros das requests
+2. testes unitarios
+3. validação de campos
+*/
