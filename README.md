@@ -4,7 +4,7 @@ This application is the AgroTools challenge for a full-stack dev position.
 
 ## Design choices
 
-* An API REST build with NodeJS and Express
+* An API REST built with NodeJS and Express
 * Using a [MVC architecture] was followed, in which the model defines the entities in the [models] and [controllers] to deal with the http methods
 
 ## Building and Running
