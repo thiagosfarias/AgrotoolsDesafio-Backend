@@ -29,8 +29,3 @@ module.exports = app => {
    
 
 }
-
-/*1. tratamento de erros das requests
-2. testes unitarios
-3. validação de campos
-*/
